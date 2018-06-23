@@ -554,4 +554,20 @@ img {
 .wrapper {
     padding-left: 18px;
     padding-right: 18px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
+
+/* adds top and bottom padding to each page section */
+
+.page-section {
+    padding: 4.5rem 0;
+}
+
+/* 4.5 vertical, 0 horizontal */
+
+.page-section--blue {
+        background-color: #2f5572;
+        color: #FFF;
+    }
