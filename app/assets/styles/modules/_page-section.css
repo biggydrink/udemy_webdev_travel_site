@@ -1,7 +1,12 @@
 /* adds top and bottom padding to each page section */
 
 .page-section {
-    padding: 4.5rem 0; /* 4.5 vertical, 0 horizontal */
+    padding: 1.2rem;
+
+    @mixin atMedium {
+        padding: 4.5rem 0; /* 4.5 vertical, 0 horizontal */
+    }
+    
 
     &--blue {
         background-color: $mainBlue;
