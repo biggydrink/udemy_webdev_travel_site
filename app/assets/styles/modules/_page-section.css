@@ -12,4 +12,11 @@
         background-color: $mainBlue;
         color: #FFF;
     }
+
+    &--testimonials {
+        /* background is image at url, aligned to top of section, aligned horizontally at center. only shows once */
+        background: url('/assets/images/testimonials-bg.jpg') top center no-repeat; 
+        /* shrink stretch image to cover containing div */
+        background-size: cover;
+    }
 }
