@@ -10,6 +10,17 @@
         max-width: 976px;
     }
 
+    &--no-padding-until-medium {
+        /* undoes padding in .wrapper for small screens */  
+        padding-left: 0;
+        padding-right: 0;
+
+        @mixin atMedium {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+    }
+
     .wrapper {
         /* no padding for wrapper within wrapper */
         padding-left: 0;
