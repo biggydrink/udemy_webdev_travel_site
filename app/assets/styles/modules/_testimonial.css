@@ -1,0 +1,65 @@
+.testimonial {
+    /* red,green,blue, alphatransparency */
+    background-color: rgba(255,255,255, .8);
+    
+    /* left, top, bottom (1px), right */
+    /* 1px of bottom padding gives space for the paragraph's own margin */
+    padding: 0 18px 1px 18px;
+
+    /* counteracts moving the photos up by 80px for smaller screens (since the testimonials stack there) */
+    margin-bottom: 98px;
+
+    @mixin atMedium {
+        /* left, top, bottom (1px), right */
+        /* 1px of bottom padding gives space for the paragraph's own margin */
+        padding: 0 1.8125rem 1px 1.8125rem;
+
+        /* removes the bottom margin since it's only needed for smaller screens */
+        margin-bottom: 0;
+    }
+
+    &--last {
+        /* removes unnecessary bottom margin for final testimonial */
+        margin-bottom: 0;
+    }
+
+    &__photo {
+        /* rounded corners - size for perfect circle is half of image size*/
+        border-radius: 80px;
+        overflow: hidden; /* hides stuff that overflows outside the div */
+        
+        /* without width/height, radius takes up width of whole div.
+        these images are smaller than that. but if we cap the div width and height
+        to exactly match the image's, then the corners will be there */
+        width: 160px;
+        height: 160px;
+        
+        /* center horizontally - top, right, bottom, left */
+        /* bottom margin of -80 counteracts the -80top positioning */
+        margin: 0 auto -80px auto;
+        
+        /* we want the image to violate the top edge of the div, so we pull it up
+        by half of its height */
+        position: relative; /* relative change means the surrounding content isn't aware of it */
+        top: -80px;
+        
+        border: 6px solid rgba(255, 255, 255, .8);
+    }
+
+    &__title {
+        color: $mainBlue;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0; /* removes extra blank space above and below */
+    }
+
+    &__subtitle {
+        color: $mainOrange;
+        text-align: center;
+        font-weight: 400;
+        font-size: .9375rem;
+        /* top, right, bottom, left */
+        margin: .25rem 0 1rem 0;
+    }
+}
