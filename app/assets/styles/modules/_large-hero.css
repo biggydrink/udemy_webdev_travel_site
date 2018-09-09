@@ -4,11 +4,16 @@
 
     &__text-content {
         position: absolute;
+        padding-top: 88px; /* size of logo */
         top: 50%;
         transform: translateY(-50%);
         left: 0;
         width: 100%;
         text-align: center;
+
+        @mixin atMedium {
+            padding-top: 60px; /* size of transparent blue background in header */
+        }
     }
 
     &__image {
