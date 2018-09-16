@@ -1,12 +1,13 @@
 class Person {
     constructor(name, favoriteColor) {
-        this._name = name;
-        this._favoriteColor = favoriteColor;
+        this.name = name;
+        this.favoriteColor = favoriteColor;
     }
 
     greet() {
-        console.log(`Hello, my name is ${this._name} and my favorite color is ${this._favoriteColor}.`);
+        console.log(`Hello, my name is ${this.name} and my favorite color is ${this.favoriteColor}.`);
     }
 }
 
-module.exports = Person;
+// module.exports = Person;
+export default Person;

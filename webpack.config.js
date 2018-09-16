@@ -8,3 +8,16 @@ module.exports = {
         filename: 'App.js'
     }
 };
+
+let model = {
+    loaders: [
+        {
+            loader: 'babel-loader',
+            query: {
+                presets: ['es2015']
+            },
+            test: /\.js$/, //regex for js files,
+            exclude: /node_modules/
+        }
+    ]
+}
