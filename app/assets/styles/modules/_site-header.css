@@ -2,14 +2,20 @@
     position: absolute;
     z-index: 2;
     width: 100%;
-    padding: 10px 0;
+    padding: 100px 0;
+    transition: background-color .3s ease-out; /* when bg color changes, new value is transitioned */
+    
 
     @mixin atMedium {
         background-color: rgba($mainBlue, .3);
+        padding: 10px 0;
     }
 
     &__btn-container {
-        float: right;
+        
+        @mixin atMedium {
+            float: right;
+        }
     }
 
     &__logo {
@@ -39,6 +45,7 @@
         position: absolute;
         top: 10px;
         right: 10px;
+        z-index: 10; /* always clickable */
 
         @mixin atMedium {
             /* don't display for non-mobile */
@@ -47,14 +54,26 @@
     }
 
     &__menu-content {
-        display: none; /* hidden */
+        position: relative;
+        transform: scale(1.2);
+        opacity: 0; /* hidden */
+        z-index: -10; /* not clickable unless changed */
+        text-align: center;
+        transition: all .3s ease-out;
 
         @mixin atMedium {
-            display: block; /* visible on larger screens */
+            opacity: 1; /* visible on larger screens */
+            transform: scale(1);
         }
 
         &--is-visible {
-            display: block;
+            opacity: 1;
+            z-index: 1;
+            transform: scale(1);
         }
+    }
+
+    &--is-expanded {
+        background-color: rgba($mainBlue, .55);
     }
 }

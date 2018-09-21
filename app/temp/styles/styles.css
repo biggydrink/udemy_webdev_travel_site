@@ -1084,18 +1084,26 @@ CSS for the footer
     position: absolute;
     z-index: 2;
     width: 100%;
-    padding: 10px 0;
+    padding: 100px 0;
+    -webkit-transition: background-color .3s ease-out;
+    transition: background-color .3s ease-out;
 }
+
+/* when bg color changes, new value is transitioned */
 
 @media (min-width: 800px) {
 
 .site-header {
-        background-color: rgba(47,85,114, .3)
+        background-color: rgba(47,85,114, .3);
+        padding: 10px 0
 }
     }
 
+@media (min-width: 800px) {
+
 .site-header__btn-container {
-        float: right;
+            float: right
+    }
     }
 
 .site-header__logo {
@@ -1131,7 +1139,10 @@ CSS for the footer
         position: absolute;
         top: 10px;
         right: 10px;
+        z-index: 10;
     }
+
+/* always clickable */
 
 @media (min-width: 800px) {
 
@@ -1142,25 +1153,46 @@ CSS for the footer
     }
 
 .site-header__menu-content {
-        display: none;
+        position: relative;
+        -webkit-transform: scale(1.2);
+                transform: scale(1.2);
+        opacity: 0; /* hidden */
+        z-index: -10; /* not clickable unless changed */
+        text-align: center;
+        -webkit-transition: all .3s ease-out;
+        transition: all .3s ease-out;
     }
-
-/* hidden */
 
 @media (min-width: 800px) {
 
 .site-header__menu-content {
-            display: block /* visible on larger screens */
+            opacity: 1; /* visible on larger screens */
+            -webkit-transform: scale(1);
+                    transform: scale(1)
     }
     }
 
 .site-header__menu-content--is-visible {
-            display: block;
+            opacity: 1;
+            z-index: 1;
+            -webkit-transform: scale(1);
+                    transform: scale(1);
         }
 
-.primary-nav--pull-right {
-        float: right;
+.site-header--is-expanded {
+        background-color: rgba(47,85,114, .55);
     }
+
+/* I think this looks bad */
+
+@media (min-width: 800px) {
+
+.primary-nav--pull-right {
+            float: right
+    }
+    }
+
+/* lesson has small screen padding of 10px, larger screen no padding */
 
 .primary-nav ul {
         margin: 0;
@@ -1175,13 +1207,39 @@ CSS for the footer
 
 .primary-nav li {
         list-style: none;
-        float: left;
-        padding-right: 20px;
+        display: inline-block;
+        padding-right: 7px;
         padding-top: 12px;
+    }
+
+@media (min-width: 800px) {
+
+.primary-nav li {
+            float: left;
+            display: block;
+            padding-right: 20px
+    }
+    }
+
+.primary-nav li:last-child {
+        padding-rght: 0;
     }
 
 .primary-nav a {
         color: #FFF;
         text-decoration: none;
         font-weight: 300;
+        display: block;
+        padding: 5px 8px;
+        font-size: .8rem;
+        background-color: rgba(47,85,114, .5);
+    }
+
+@media (min-width: 800px) {
+
+.primary-nav a {
+            padding: 0;
+            font-size: 1rem;
+            background-color: transparent
+    }
     }
