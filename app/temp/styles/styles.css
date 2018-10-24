@@ -1301,3 +1301,13 @@ CSS for the footer
             background-color: transparent
     }
     }
+
+.reveal-item {
+    opacity: 0;
+    -webkit-transition: 1.5s;
+    transition: 1.5s;
+}
+
+.reveal-item--is-visible {
+        opacity: 1;
+    }
